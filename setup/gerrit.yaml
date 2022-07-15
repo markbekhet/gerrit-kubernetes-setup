@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gerrit-deployment
+spec:
+  selector:
+    matchLabels:
+      app: gerrit
+  template:
+    metadata:
+        labels:
+          app: gerrit
+    spec:
+      containers:
+        - name: gerrit
+          image: gerritcodereview/gerrit
+          ports:
+            - containerPort: 8080
+              name: gerrit
+            - containerPort: 5005
+              name: debugger
+          volumeMounts:
+            - mountPath: /var/gerrit/git
+              name: gerrit-site-git
+            - mountPath: /var/gerrit/db
+              name: gerrit-site-db
+            - mountPath: /var/gerrit/data
+              name: gerrit-site-data
+            - mountPath: /var/gerrit/logs
+              name: gerrit-site-logs
+            - mountPath: /var/gerrit/cache
+              name: gerrit-site-cache
+            - mountPath: /var/gerrit/etc
+              name: gerrit-site-etc
+            - mountPath: /var/gerrit/index
+              name: gerrit-site-index
+      volumes:
+      - name: gerrit-site-git
+        persistentVolumeClaim:
+          claimName: git-pv-claim
+      - name: gerrit-site-db
+        persistentVolumeClaim:
+          claimName: db-pv-claim
+      - name: gerrit-site-data
+        persistentVolumeClaim:
+          claimName: data-pv-claim
+      - name: gerrit-site-logs
+        persistentVolumeClaim:
+          claimName: logs-pv-claim
+      - name: gerrit-site-cache
+        persistentVolumeClaim:
+          claimName: cache-pv-claim
+      - name: gerrit-site-etc
+        persistentVolumeClaim:
+          claimName: etc-pv-claim
+      - name: gerrit-site-index
+        persistentVolumeClaim:
+          claimName: index-pv-claim

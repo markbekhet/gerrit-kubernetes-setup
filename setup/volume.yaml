@@ -1,0 +1,111 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-git
+  labels:
+    type: local
+    name: git
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 1Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/git"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-db
+  labels:
+    type: local
+    name: db
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 4Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/db"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-data
+  labels:
+    type: local
+    name: data
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 3Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/data"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-logs
+  labels:
+    type: local
+    name: logs
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 1Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/logs"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-cache
+  labels:
+    type: local
+    name: cache
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 5Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/cache"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-etc
+  labels:
+    type: local
+    name: etc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 1Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/etc"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gerrit-pv-volume-index
+  labels:
+    type: local
+    name: index
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+      storage: 5Gi
+  hostPath:
+    path: "/home/docker/gerrit_site/index"
