@@ -8,7 +8,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 1Gi
   hostPath:
@@ -24,7 +24,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 4Gi
   hostPath:
@@ -40,7 +40,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 3Gi
   hostPath:
@@ -56,7 +56,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 1Gi
   hostPath:
@@ -72,7 +72,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 5Gi
   hostPath:
@@ -88,7 +88,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 1Gi
   hostPath:
@@ -104,7 +104,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   capacity:
       storage: 5Gi
   hostPath:

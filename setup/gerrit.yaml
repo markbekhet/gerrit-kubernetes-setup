@@ -11,6 +11,12 @@ spec:
         labels:
           app: gerrit
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions: [{key: app, operator: In, values: [gerrit]}]
+            topologyKey: "kubernetes.io/hostname"
       containers:
         - name: gerrit
           image: gerritcodereview/gerrit
